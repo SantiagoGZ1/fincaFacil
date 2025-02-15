@@ -1,0 +1,17 @@
+server:
+   port: 8761 # Default port for Eureka server
+
+spring:
+   application:
+      name: MSA-server # Name of the application (msa: microservices architecture)
+   config:
+      import: optional:configserver:http://localhost:8888 # URL of the Config server
+eureka:
+   instance:
+      hostname: localhost # Hostname of the Eureka server
+   client:
+      registerWithEureka: false #no se registre dentro de si mismo
+      fetchRegistry: false
+      server-url:
+         defaultZone: http://localhost${server.port} # URL of the Eureka server
+         # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
