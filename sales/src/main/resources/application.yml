@@ -1,0 +1,24 @@
+server:
+   port: 9090
+
+spring:
+   application:
+      name: sales
+datasource: # mysql Database configuration
+   url: jdbc:mysql://localhost:3306/sales
+   username: root
+   password: Bleachh2233+
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   jpa:
+      hibernate:
+         ddl-auto: update #auto create table
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+   config:
+      import: optional:configserver:http://localhost:8888 # URL of the Config server
+eureka:
+   instance:
+      hostname: localhost
+   client:
+      service-url:
+         defaultZone: http://localhost:8761/eureka/
