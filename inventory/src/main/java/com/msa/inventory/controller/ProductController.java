@@ -2,13 +2,10 @@ package com.msa.inventory.controller;
 
 import com.msa.inventory.entitie.Product;
 import com.msa.inventory.service.ProductService;
-import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -30,6 +27,10 @@ public class ProductController {
   @GetMapping("/category/{categoryName}")
   public List<Product> getProductByCategoryName(@PathVariable String categoryName) {
     return productService.getProductsByCategoryName(categoryName);
+  }
+  @DeleteMapping("/{id}")
+  public ResponseEntity<?> deleteProductById(@PathVariable Long id) {
+    return productService.deleteProductById(id);
   }
 
 }
