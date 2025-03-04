@@ -23,6 +23,7 @@
         <module>inventory</module>
         <module>sales</module>
         <module>customers</module>
+        <module>client</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -2,12 +2,17 @@ package com.msa.inventory.service;
 
 import com.msa.inventory.entitie.Category;
 import com.msa.inventory.repository.CategoryRepo;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
+@AllArgsConstructor
 public class CategoryService {
 
   @Autowired
@@ -29,5 +34,18 @@ public class CategoryService {
     }
     categoryRepo.deleteById(id);
     return ResponseEntity.ok("Category with id: " + id + " has been deleted");
+  }
+
+  public void defaultCategoryInitialization() {
+    List<Category> defaultCategories = new ArrayList<>();
+    defaultCategories.add(new Category("Dairy", "Milk derivatives", true));
+    defaultCategories.add(new Category("Meat", "Animals meat products", true));
+    defaultCategories.add(new Category("Fruits", "Fruits", true));
+    defaultCategories.add(new Category("Vegetables", "Vegetables", true));
+    for (Category category : defaultCategories){ // for each: Se usa si solo quiero leer elementos de una lista
+      if(!categoryRepo.existsByName(category.getName())){
+        categoryRepo.save(category);
+      }
+    }
   }
 }
