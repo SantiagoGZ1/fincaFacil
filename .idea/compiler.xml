@@ -7,12 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="inventory" />
-        <module name="gateway" />
-        <module name="eureka" />
         <module name="configServer" />
+        <module name="eureka" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="client" target="17" />
       <module name="customers" target="17" />
       <module name="Gateway" target="17" />
       <module name="sales" target="17" />

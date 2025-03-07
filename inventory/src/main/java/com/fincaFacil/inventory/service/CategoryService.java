@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,7 +33,7 @@ public class CategoryService {
     return ResponseEntity.ok("Category with id: " + id + " has been deleted");
   }
 
-/*  public void defaultCategoryInitialization() {
+  public void defaultCategoryInitialization() {
     List<CategoryEntity> defaultCategories = new ArrayList<>();
     defaultCategories.add(new CategoryEntity("Dairy", "Milk derivatives", true));
     defaultCategories.add(new CategoryEntity("Meat", "Animals meat products", true));
@@ -43,5 +44,5 @@ public class CategoryService {
         categoryRepo.save(category);
       }
     }
-  }*/
+  }
 }
