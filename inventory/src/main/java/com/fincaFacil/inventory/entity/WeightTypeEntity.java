@@ -1,10 +1,7 @@
 package com.fincaFacil.inventory.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 
@@ -21,6 +18,6 @@ public class WeightTypeEntity {
   private Long id;
   private String name;
   private String abbreviation; // Ej: "kg", "lb", "g"
-  @OneToMany(mappedBy = "weightType", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "weightTypeEntity", cascade = CascadeType.ALL)
   private Set<ProductEntity> productEntity;
 }
