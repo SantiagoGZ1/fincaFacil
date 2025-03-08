@@ -16,16 +16,13 @@ public class ProductController {
   private ProductService productService;
 
   @PostMapping("/new")
-  public ResponseEntity<?> createProduct(@RequestBody ProductEntity product) {
-    //se guarda el producto creado en la base de datos y savedProductt
-    ProductEntity savedProduct = productService.saveProduct(product);
-    return ResponseEntity.ok().body("successfully created product" + savedProduct);
+  public ResponseEntity<?> createProduct(@RequestBody ProductEntity productEntity) {
+    return productService.saveProduct(productEntity);
   }
 
   @GetMapping("/{id}")
   public ResponseEntity<?> getProductById(@PathVariable Long id) {
-    ProductEntity product = productService.getProductById(id);
-    return ResponseEntity.ok().body(product);
+    return ResponseEntity.ok(productService.getProductById(id));
   }
 
   @DeleteMapping("/{id}")

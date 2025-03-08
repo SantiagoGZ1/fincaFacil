@@ -14,12 +14,12 @@ public class ProductService {
   @Autowired
   private ProductRepo productRepo;
 
-  public ProductEntity saveProduct(ProductEntity product) {
-    return productRepo.save(product);
+  public ResponseEntity<?> saveProduct(ProductEntity product) {
+    return ResponseEntity.ok("Product has been saved" + product);
   }
 
   public ProductEntity getProductById(Long id) {
-    return productRepo.findById(id).orElse(null);
+    return productRepo.findById(id).orElseThrow();
   }
 
   //TODO implementar el metodo de obtener todos los productos por usario

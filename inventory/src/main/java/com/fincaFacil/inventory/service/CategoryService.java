@@ -15,8 +15,8 @@ public class CategoryService {
   @Autowired
   private CategoryRepo categoryRepo;
 
-  public CategoryEntity saveCategory(CategoryEntity category) {
-    return categoryRepo.save(category);
+  public ResponseEntity<?> savedCategory(CategoryEntity categoryEntity){
+    return ResponseEntity.ok("Cateogry has been saved" + categoryEntity);
   }
 
   public CategoryEntity getCategoryById(Long id) {

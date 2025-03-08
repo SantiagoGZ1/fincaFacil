@@ -14,7 +14,7 @@ public class WareHouseService {
   private WareHouseRepo wareHouseRepo;
 
   public ResponseEntity<?> savedWareHouse(WareHouseEntity wareHouseEntity){
-    return ResponseEntity.ok("WareHouse has been saved" + wareHouseEntity);
+    return ResponseEntity.ok("Ware House has been saved" + wareHouseEntity);
   }
 
   public WareHouseEntity getWareHouseById(Long id){

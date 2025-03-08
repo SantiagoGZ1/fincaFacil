@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -21,8 +22,8 @@ public class CategoryEntity {
   private String description;
   @Column(nullable = false)
   private Boolean dFault = false;
-  @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-  private List<ProductEntity> products;
+  @ManyToMany(mappedBy = "categories")
+  private Set<ProductEntity> products;
 
   public CategoryEntity (String name, String description, boolean dFault) {
     this.name = name;

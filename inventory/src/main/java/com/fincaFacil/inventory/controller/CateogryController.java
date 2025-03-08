@@ -14,15 +14,13 @@ public class CateogryController {
   private CategoryService categoryService;
 
   @PostMapping("/new")
-  public ResponseEntity<?> createCategory(@RequestBody CategoryEntity category) {
-    CategoryEntity savedCategory = categoryService.saveCategory(category);
-    return ResponseEntity.ok().body("successfully created category" + savedCategory);
+  public ResponseEntity<?> createCategory(@RequestBody CategoryEntity categoryEntity) {
+    return categoryService.savedCategory(categoryEntity);
   }
 
   @GetMapping("/{id}")
   public ResponseEntity<?> getCategoryById(@PathVariable Long id) {
-    CategoryEntity product = categoryService.getCategoryById(id);
-    return ResponseEntity.ok().body(product);
+    return ResponseEntity.ok(categoryService.getCategoryById(id));
   }
 
   @DeleteMapping("/{id}")

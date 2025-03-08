@@ -20,26 +20,21 @@ import lombok.*;
 @Entity
 @Table(name = "inventory_items")
 public class InventoryItemEntity {
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   //Que producto tengo
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "product_id")
   private ProductEntity product;
-
   //En que bodega está
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "warehouse_id")
   private WareHouseEntity warehouse;
 
   private Integer quantity;
-
   // Puedes agregar otros campos útiles para inventario
   private Integer minimumStock;
   private Integer maximumStock;
   private String location; // ubicación dentro de la bodega (pasillo, estante, etc.)
-
 }
