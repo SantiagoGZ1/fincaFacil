@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "weight_type")
-public class WeightType {
+public class WeightTypeEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

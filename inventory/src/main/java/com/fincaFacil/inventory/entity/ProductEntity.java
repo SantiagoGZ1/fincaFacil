@@ -1,7 +1,7 @@
 package com.fincaFacil.inventory.entity;
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDate;
+
 import java.util.List;
 import java.util.Set;
 
@@ -30,7 +30,7 @@ public class ProductEntity {
   private Double weight;
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "weight_type_id")
-  private WeightType weightType;
+  private WeightTypeEntity weightTypeEntity;
 
   @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
   private List<InventoryItemEntity> inventoryItems;
