@@ -20,4 +20,5 @@ public class WeightTypeEntity {
   private String abbreviation; // Ej: "kg", "lb", "g"
   @OneToMany(mappedBy = "weightTypeEntity", cascade = CascadeType.ALL)
   private Set<ProductEntity> productEntity;
+  // Este parámetro es crucial. Indica que esta relación ya está mapeada por el campo weightTypeEntity en la clase ProductEntity. Esto previene que Hibernate cree una tabla de unión adicional.
 }

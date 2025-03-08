@@ -26,7 +26,11 @@ public class ProductEntity {
       inverseJoinColumns = @JoinColumn(name = "category_id")
   )
   private Set<CategoryEntity> categories;
-  //Use Set<> en lugar de List<> para las colecciones porque es más eficiente en relaciones muchos a muchos, ya que evita duplicados.
+/*  @JoinTable: Define la tabla intermedia que almacena las relaciones:
+ name: Nombre de la tabla intermedia
+  joinColumns: Columna que hace referencia a la entidad actual (producto)
+  inverseJoinColumns: Columna que hace referencia a la entidad relacionada (categoría)
+Use Set<> en lugar de List<> para las colecciones porque es más eficiente en relaciones muchos a muchos, ya que evita duplicados.*/
   private Double weight;
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "weight_type_id")
