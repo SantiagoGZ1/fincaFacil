@@ -10,9 +10,9 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
    jpa:
       hibernate:
-         ddl-auto: create
-         database: mysql
-         database-platform: org.hibernate.dialect.MySQL8Dialect
+         ddl-auto: update
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL8Dialect
    config:
       import: optional:configserver:http://localhost:8888
 eureka:

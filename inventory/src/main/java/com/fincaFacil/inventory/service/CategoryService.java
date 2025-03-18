@@ -1,12 +1,13 @@
 package com.fincaFacil.inventory.service;
 
-import com.fincaFacil.inventory.entity.CategoryEntity;
+import com.fincaFacil.inventory.model.CategoryEntity;
 import com.fincaFacil.inventory.repository.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,8 +15,8 @@ public class CategoryService {
   @Autowired
   private CategoryRepo categoryRepo;
 
-  public CategoryEntity saveCategory(CategoryEntity category) {
-    return categoryRepo.save(category);
+  public ResponseEntity<?> savedCategory(CategoryEntity categoryEntity){
+    return ResponseEntity.ok("Cateogry has been saved" + categoryEntity);
   }
 
   public CategoryEntity getCategoryById(Long id) {
@@ -32,7 +33,7 @@ public class CategoryService {
     return ResponseEntity.ok("Category with id: " + id + " has been deleted");
   }
 
-/*  public void defaultCategoryInitialization() {
+  public void defaultCategoryInitialization() {
     List<CategoryEntity> defaultCategories = new ArrayList<>();
     defaultCategories.add(new CategoryEntity("Dairy", "Milk derivatives", true));
     defaultCategories.add(new CategoryEntity("Meat", "Animals meat products", true));
@@ -43,5 +44,5 @@ public class CategoryService {
         categoryRepo.save(category);
       }
     }
-  }*/
+  }
 }

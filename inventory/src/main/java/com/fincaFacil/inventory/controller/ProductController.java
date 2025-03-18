@@ -1,12 +1,10 @@
 package com.fincaFacil.inventory.controller;
 
-import com.fincaFacil.inventory.entity.ProductEntity;
+import com.fincaFacil.inventory.model.ProductEntity;
 import com.fincaFacil.inventory.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/product")
@@ -16,16 +14,13 @@ public class ProductController {
   private ProductService productService;
 
   @PostMapping("/new")
-  public ResponseEntity<?> createProduct(@RequestBody ProductEntity product) {
-    //se guarda el producto creado en la base de datos y savedProductt
-    ProductEntity savedProduct = productService.saveProduct(product);
-    return ResponseEntity.ok().body("successfully created product" + savedProduct);
+  public ResponseEntity<?> createProduct(@RequestBody ProductEntity productEntity) {
+    return productService.saveProduct(productEntity);
   }
 
   @GetMapping("/{id}")
   public ResponseEntity<?> getProductById(@PathVariable Long id) {
-    ProductEntity product = productService.getProductById(id);
-    return ResponseEntity.ok().body(product);
+    return ResponseEntity.ok(productService.getProductById(id));
   }
 
   @DeleteMapping("/{id}")
