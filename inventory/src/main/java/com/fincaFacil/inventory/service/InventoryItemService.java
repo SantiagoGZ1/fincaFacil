@@ -1,6 +1,6 @@
 package com.fincaFacil.inventory.service;
 
-import com.fincaFacil.inventory.entity.InventoryItemEntity;
+import com.fincaFacil.inventory.model.InventoryItemEntity;
 import com.fincaFacil.inventory.repository.InventoryItemRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

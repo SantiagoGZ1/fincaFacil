@@ -1,6 +1,6 @@
 package com.fincaFacil.inventory.service;
 
-import com.fincaFacil.inventory.entity.WeightTypeEntity;
+import com.fincaFacil.inventory.model.WeightTypeEntity;
 import com.fincaFacil.inventory.repository.WeightTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

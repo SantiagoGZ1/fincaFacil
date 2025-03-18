@@ -1,4 +1,4 @@
-package com.fincaFacil.inventory.entity;
+package com.fincaFacil.inventory.model;
 
 import jakarta.persistence.*;
 import lombok.*;

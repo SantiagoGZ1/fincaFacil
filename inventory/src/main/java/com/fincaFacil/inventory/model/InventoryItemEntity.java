@@ -8,7 +8,7 @@
     Por ejemplo: En la bodega "Central" pueden existir 500 productos diferentes, cada uno con su cantidad específica. Esto genera 500 registros de InventoryItemEntity que apuntan a la misma bodega.
     La columna warehouse_id en la tabla inventory_items guardará la referencia (clave foránea) al ID de la bodega.*/
 
-package com.fincaFacil.inventory.entity;
+package com.fincaFacil.inventory.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -34,7 +34,7 @@ public class InventoryItemEntity {
 
   private Integer quantity;
   // Puedes agregar otros campos útiles para inventario
-  private Integer minimumStock;
-  private Integer maximumStock;
+ // private Integer minimumStock;
+ // private Integer maximumStock;
   private String location; // ubicación dentro de la bodega (pasillo, estante, etc.)
 }
